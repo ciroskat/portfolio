@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint"
   },
+  "homepage": "https://ciroskat.github.io/portfolio",
   "dependencies": {
     "next": "16.0.8",
     "react": "19.2.1",
