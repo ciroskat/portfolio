@@ -7,6 +7,10 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 npm install          # se non l’hai già fatto
 npm run build        # genera la cartella .next
 
+git checkout gh-pages
+
+rm -rf *
+cp -r out/* .   # se sei su gh-pages e out/ esiste su gh-pages (altrimenti copia da main)
 
 
 First, run the development server:
