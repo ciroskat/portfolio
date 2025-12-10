@@ -2,6 +2,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+
+## deploy 
+npm install          # se non l’hai già fatto
+npm run build        # genera la cartella .next
+
+
+
 First, run the development server:
 
 ```bash

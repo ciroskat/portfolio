@@ -1,7 +1,9 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',       // per generare sito statico
-    basePath: '/portfolio'  // necessario se il sito non è alla root
+    output: 'export',
+    basePath: '/portfolio', // se vuoi
+    images: {
+        unoptimized: true, // permette di usare immagini da /public anche con next export
+    },
 };
 
 module.exports = nextConfig;
