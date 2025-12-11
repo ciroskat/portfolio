@@ -12,7 +12,7 @@ echo "🔧 Build del progetto Next.js..."
 npm run build || { echo "❌ Build fallita"; exit 1; }
 
 echo "🌿 Creazione branch $BRANCH..."
-git checkout --orphan $BRANCH
+git checkout $BRANCH
 git reset --hard
 
 echo "📂 Copia dei file statici da out/..."
