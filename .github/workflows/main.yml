@@ -1,0 +1,63 @@
+name: Deploy Next.js Static to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Imposta il branch da cui eseguire il deployment
+
+  # Permette di eseguire il workflow manualmente
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      # 1. Configura Node.js
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Usa una versione LTS stabile
+          cache: 'npm'
+          
+      # 2. Installa e Compila Next.js
+      - name: Install dependencies and Build Next.js
+        run: |
+          npm install
+          npm run build
+          
+      # 3. Correzione del Percorso (OBBLIGATORIO per risolvere gli errori 404 rimasti)
+      # Questo passo elimina il prefisso problematico '_next/' dagli URL statici
+      - name: Install replace-in-file and Fix Next.js Paths
+        run: |
+          npm install replace-in-file
+          npx replace-in-file "/portfolio/_next/static/" "/portfolio/static/" out/index.html out/404.html out/_next/static/**/*.css out/_next/static/**/*.js --isRegex
+
+      # 4. Configura GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        
+      # 5. Carica l'artefatto (la cartella 'out' corretta)
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './out' # Next.js static export folder
+          
+  # Job per il deployment effettivo
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
