@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "fix-paths": "node scripts/fix-paths.js",
+    "deploy": "npm run build && npm run fix-paths && npx gh-pages -d out -f"
   },
   "dependencies": {
     "next": "16.0.8",
@@ -21,6 +22,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.8",
     "gh-pages": "^6.3.0",
+    "replace-in-file": "^8.4.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

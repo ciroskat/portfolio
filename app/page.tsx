@@ -1,17 +1,24 @@
 import Image from "next/image";
 
+// 1. Definisci il BASE_PATH, che deve corrispondere al tuo repository GitHub.
+//    (In un'applicazione reale, useresti process.env.NEXT_PUBLIC_BASE_PATH)
+const BASE_PATH = "/portfolio";
+
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+        {/* PRIMA IMMAGINE: NEXT.SVG */}
         <Image
           className="dark:invert"
-          src="/next.svg"
+          src={`${BASE_PATH}/next.svg`} // <--- FIX: Aggiunto BASE_PATH
           alt="Next.js logo"
           width={100}
           height={20}
           priority
+          unoptimized // <--- FIX: Necessario per output: 'export'
         />
+
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
             To get started, edit the page.tsx file.
@@ -41,12 +48,14 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
+            {/* SECONDA IMMAGINE: VERCEL.SVG */}
             <Image
               className="dark:invert"
-              src="/vercel.svg"
+              src={`${BASE_PATH}/vercel.svg`} // <--- FIX: Aggiunto BASE_PATH
               alt="Vercel logomark"
               width={16}
               height={16}
+              unoptimized // <--- FIX: Necessario per output: 'export'
             />
             Deploy Now
           </a>

@@ -1,0 +1,6 @@
+# _config.yml
+title: Il Mio Portfolio Jekyll
+description: Un semplice portfolio statico.
+baseurl: "/portfolio" # Importante per la sottocartella
+permalink: pretty
+theme: minima # Oppure un altro tema Jekyll
