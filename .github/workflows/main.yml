@@ -3,9 +3,7 @@ name: Deploy Next.js Static to GitHub Pages
 on:
   push:
     branches:
-      - main # Imposta il branch da cui eseguire il deployment
-
-  # Permette di eseguire il workflow manualmente
+      - main
   workflow_dispatch:
 
 permissions:
@@ -20,30 +18,32 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 1. Configura Node.js
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20" # Usa una versione LTS stabile
+          node-version: "20"
           cache: "npm"
 
-      # 2. Installa e Compila Next.js
-      - name: Install dependencies and Build Next.js
-        run: |
-          npm install
-          npm run build
+      - name: Install dependencies
+        run: npm ci
 
-      # 4. Configura GitHub Pages
+      # Con output:'export', next build produce già 'out/'.
+      # Facciamo anche 'next export' per compatibilità.
+      - name: Build and Export
+        env:
+          NODE_ENV: production
+        run: |
+          npm run build
+          npm run export || true
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 5. Carica l'artefatto (la cartella 'out' corretta)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./out" # Next.js static export folder
+          path: "./out"
 
-  # Job per il deployment effettivo
   deploy:
     environment:
       name: github-pages
