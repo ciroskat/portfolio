@@ -1,9 +1,16 @@
+/** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
-    basePath: '/portfolio', // se vuoi
+    basePath: '/portfolio',
+    assetPrefix: '/portfolio/',
     images: {
-        unoptimized: true, // permette di usare immagini da /public anche con next export
+        unoptimized: true,
     },
+    turbopack: {
+        root: __dirname,
+    }
+
 };
+
 
 module.exports = nextConfig;
