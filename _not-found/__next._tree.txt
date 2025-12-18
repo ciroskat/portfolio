@@ -1,0 +1,2 @@
+:HL["https://ciroskat.github.io/portfolio/_next/static/chunks/1842651f913890f9.css","style"]
+0:{"buildId":"GV8Aey4zHQoK_dMQq49Av","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

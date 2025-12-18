@@ -1,0 +1,4 @@
+1:"$Sreact.fragment"
+2:I[53853,["https://ciroskat.github.io/portfolio/_next/static/chunks/77e7100737f17bb7.js","https://ciroskat.github.io/portfolio/_next/static/chunks/369c898a97d850a1.js"],"default"]
+3:I[60192,["https://ciroskat.github.io/portfolio/_next/static/chunks/77e7100737f17bb7.js","https://ciroskat.github.io/portfolio/_next/static/chunks/369c898a97d850a1.js"],"default"]
+0:{"buildId":"GV8Aey4zHQoK_dMQq49Av","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
