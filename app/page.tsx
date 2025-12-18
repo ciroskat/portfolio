@@ -1,22 +1,21 @@
 import Image from "next/image";
 
-// 1. Definisci il BASE_PATH, che deve corrispondere al tuo repository GitHub.
-//    (In un'applicazione reale, useresti process.env.NEXT_PUBLIC_BASE_PATH)
-const BASE_PATH = "/portfolio";
-
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        {/* PRIMA IMMAGINE: NEXT.SVG */}
+
+        {/* USA PERCORSI RELATIVI PULITI: 
+          Next.js aggiungerà automaticamente il prefisso del repo in produzione 
+          grazie alla proprietà 'basePath' nel next.config.js
+        */}
         <Image
           className="dark:invert"
-          src={`${BASE_PATH}/next.svg`} // <--- FIX: Aggiunto BASE_PATH
+          src="/next.svg"
           alt="Next.js logo"
           width={100}
           height={20}
           priority
-          unoptimized // <--- FIX: Necessario per output: 'export'
         />
 
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
@@ -41,21 +40,20 @@ export default function Home() {
             center.
           </p>
         </div>
+
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
+            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-black text-white px-5 transition-colors hover:bg-[#383838] dark:bg-white dark:text-black dark:hover:bg-[#ccc] md:w-[158px]"
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {/* SECONDA IMMAGINE: VERCEL.SVG */}
             <Image
               className="dark:invert"
-              src={`${BASE_PATH}/vercel.svg`} // <--- FIX: Aggiunto BASE_PATH
+              src="/vercel.svg"
               alt="Vercel logomark"
               width={16}
               height={16}
-              unoptimized // <--- FIX: Necessario per output: 'export'
             />
             Deploy Now
           </a>
