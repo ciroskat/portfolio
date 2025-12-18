@@ -80,10 +80,9 @@ export default function Home() {
                   <li><strong>Container & K8s:</strong> Rancher, OKD (OpenShift), AKS.</li>
                   <li><strong>Modern Web Stack:</strong> Node.js, TypeScript (TSX).</li>
                   <li><strong>Serverless & SaaS:</strong> Supabase, Netlify.</li>
-                  <li><strong>IaC & Automation:</strong> Terraform, Ansible.</li>
+                  <li><strong>Cyber Security & WAF:</strong> WAF Admin, Log analysis & Threat detection.</li>
                 </ul>
                 <ul className="space-y-2 list-disc list-inside">
-                  <li><strong>Cyber Security & WAF:</strong> WAF Admin, Log analysis & Threat detection.</li>
                   <li><strong>AI Automation:</strong> Python & Azure AI integration.</li>
                   <li><strong>GitLab Admin:</strong> Enterprise Instance & Runner HA.</li>
                   <li><strong>Observability:</strong> Prometheus, Grafana, Zabbix.</li>
@@ -99,7 +98,7 @@ export default function Home() {
           <div className="rounded-xl border border-zinc-200 p-6 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm">
             <h3 className="font-bold text-lg mb-4 text-blue-600 flex items-center gap-2"><span>⚙️</span> Automation & Dev</h3>
             <div className="flex flex-wrap gap-2 text-sm">
-              {['Node.js', 'TypeScript', 'Python', 'Terraform', 'Ansible', 'GitLab Admin', 'Netlify', 'Supabase', 'Java', 'Maven'].map(skill => (
+              {['Node.js', 'TypeScript', 'Python', 'GitLab Admin', 'Netlify', 'Supabase', 'Java', 'Maven'].map(skill => (
                 <span key={skill} className="px-3 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800 font-medium">{skill}</span>
               ))}
             </div>
