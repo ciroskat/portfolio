@@ -169,7 +169,7 @@ export default function Home() {
           <div className="grid gap-8">
             {[
               { id: 'CKAD', name: 'Certified Kubernetes Application Developer', issuer: 'CNCF', color: 'blue', link: 'https://www.credly.com/badges/5e888d67-980c-48d2-8aea-d7bb0f3ef1fe' },
-              { id: 'DX', name: 'EXIN DevOps Professional', issuer: 'EXIN', color: 'emerald', link: 'https://mylogin.exin.nl/polarserver.asp?Script=GetLinkedInPost&CandidateCertificateGUID=161DE0A3-75A1-42A2-9FB3-162F23ABDD2B&ts=394435843' }
+              { id: 'EXIN', name: 'EXIN DevOps Professional', issuer: 'EXIN', color: 'emerald', link: 'https://mylogin.exin.nl/polarserver.asp?Script=GetLinkedInPost&CandidateCertificateGUID=161DE0A3-75A1-42A2-9FB3-162F23ABDD2B&ts=394435843' }
             ].map((cert) => (
               <motion.a
                 key={cert.id}
